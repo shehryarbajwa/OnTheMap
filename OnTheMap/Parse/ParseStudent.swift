@@ -31,6 +31,19 @@ struct ParseStudent {
         latitude = dictionary[ParseAPI.JSONResponseKeys.latitude] as? Double
     }
     
+    var fullname: String {
+        var name = ""
+        if !((firstName?.isEmpty)!){
+            name = firstName!
+        }
+        if !((lastName?.isEmpty)!){
+            name = lastName!
+        } else {
+            name += "\(lastName)"
+        }
+        return name
+    }
+    
     static func studentsJSON(_ results: [[String:AnyObject]]) -> [ParseStudent]{
         var students = [ParseStudent]()
         for result in results {
@@ -47,12 +60,14 @@ struct ParseStudent {
         return ParseStudent(dictionary: results)
     }
     
+    
     final class StudentStorage {
-        var students : [ParseStudent] = [ParseStudent]()
-        static let sharedInstance = StudentStorage()
+        
+        static var sharedInstance = [ParseStudent]()
+        
         private init() {}
+        
+        static var studentsInformation = [ParseStudent]()
     }
-    
-    
     
 }

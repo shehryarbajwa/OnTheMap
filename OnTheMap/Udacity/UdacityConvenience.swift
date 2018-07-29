@@ -64,7 +64,19 @@ extension UdacityClient {
                 
             }
         }
+    }
+    
+    func sessionLogout(_ completionHandlerForLogout: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
         
+        self.deleteSessionID() { (success, sessionID, errorString) in
+            
+            if success {
+                ParseClient.sharedInstance().sessionID = nil
+                completionHandlerForLogout(success, errorString)
+            }   else {
+                completionHandlerForLogout(false, errorString)
+            }
+        }
     }
     
     func getuserInfo(_ completionHandlerforGet: @escaping (_ success: [StudentInformation]?, _ errorString:NSError?)->Void){
@@ -85,48 +97,5 @@ extension UdacityClient {
             }
         }
     }
-    
-        func sessionLogout(_ completionHandlerForLogout: @escaping (_ success: Bool, _ errorString: String?) -> Void) {
-            
-            self.deleteSessionID() { (success, sessionID, errorString) in
-                
-                if success {
-                    // Remove shared sessionID
-                    //ParseClient.sharedInstance().sessionID = nil
-                    completionHandlerForLogout(success, errorString)
-                } else {
-                    completionHandlerForLogout(false, errorString)
-                }
-            }
-        }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-}
+    }
 }

@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
             //Add an alert view here
         } else {
             UdacityClient.sharedInstance().authenticateWithLogin((usernameTextfield.text)!, (passwordTextfield.text)!) { (success, errorString ) in
-                performUIUpdatesOnMain{
+                self.performUIUpdatesOnMain{
                     if success{
                         self.completelogin()
                     } else {

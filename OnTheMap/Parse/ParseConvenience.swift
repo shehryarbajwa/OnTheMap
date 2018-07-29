@@ -31,28 +31,29 @@ extension ParseClient{
                 }
             }
         }
+    }
     
-        func getsingleLocation(_ userID:String,  _ completionhandlerforsinglelocation: @escaping(_ results: ParseStudent?,   _ error: NSError?)->Void) {
+    func getsingleLocation(_ completionhandlerforsinglelocation: @escaping(_ results: ParseStudent?,   _ error: NSError?)->Void) {
             
-            var parameterswithkeys = [String:AnyObject]()
+        var parameterswithkeys = [String:AnyObject]()
             
             parameterswithkeys[ParseAPI.QueryKeys.Where] = "{\"uniqueKey\":\"\(userID)\"}" as AnyObject?
             
-            let _ = taskforGetMethod(ParseAPI.Methods.StudentLocation, parameterswithkeys) { (result, error) in
-                if let error = error {
+        let _ = taskforGetMethod(ParseAPI.Methods.StudentLocation, parameterswithkeys) { (result, error) in
+            if let error = error {
                     completionhandlerforsinglelocation(nil, error)
-                } else {
-                    if let results = result?[ParseAPI.JSONResponseKeys.StudentLocation] as? [[String:AnyObject]]{
-                        if (results.first != nil) {
-                            let student = ParseStudent.studentsJSON(results)
-                        } else {
+            } else {
+                if let results = result?[ParseAPI.JSONResponseKeys.StudentLocation] as? [[String:AnyObject]]{
+                    if (results.first != nil) {
+                        let student = ParseStudent.studentsJSON(results)
+                    } else {
                             completionhandlerforsinglelocation(nil, NSError(domain: "getStudentLocation parsing", code: 0, userInfo: [NSLocalizedDescriptionKey: "Could not parse getStudentLocation"]))
                         }
                     }
                 }
             }
-            
         }
+    
         func posttoStudentLocations(_ student: [String:AnyObject], _ completionhandlerforPost: @escaping (_ success: Bool, _ error:NSError?)->Void){
             
             var parameters = [String:AnyObject]()
@@ -61,7 +62,7 @@ extension ParseClient{
             
             let _ = taskforPUTMethod(ParseAPI.Methods.StudentLocation, parameters, jsonBody: jsonBody!) { (results, error) in
                 if let error = error {
-                    completionhandlerforlocations(nil, error)
+                    completionhandlerforPost(false, error)
                 } else {
                     if let results = results?[ParseAPI.JSONResponseKeys.objectID] as? String {
                         completionhandlerforPost(true, nil)
@@ -107,5 +108,4 @@ extension ParseClient{
     
     
     
-}
 }

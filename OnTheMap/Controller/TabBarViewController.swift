@@ -12,26 +12,60 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        //NotificationCenter.default.addObserver(self, selector: #selector(loadStudentsInformation), name: .reload, object: nil)
+        //loadStudentsInformation()
+    }
+    
+    deinit {
+        //NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     @IBOutlet weak var logout : UIBarItem?
     @IBOutlet weak var addpin : UIBarItem?
     @IBOutlet weak var refresh : UIBarItem?
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func logoutsession(_ sender: Any){
+        UdacityClient.sharedInstance().sessionLogout { (success, errorString) in
+            if success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.alert(title: "Error logging out", message: errorString!)
+            }
+        }
     }
-    */
+    
+    @IBAction func reload(_ sender: Any){
+        loadstudentinformation()
+    }
+    
+    private func loadstudentinformation() {
+        ParseClient.sharedInstance().getmultiplelocations { (StudentInformation, error) in
+            if let error = error {
+                self.alert(title: "Error", message: error.localizedDescription)
+                return
+        }
+            if let StudentInformation = StudentInformation {
+               ParseStudent.StudentStorage.studentsInformation = StudentInformation
+               //NotificationCenter.default.post(name: .reloadCompleted, object: nil)
+            }
+        }
+    }
+    
+    @IBAction func addLocation(_ sender: Any){
+        ParseClient.sharedInstance().getsingleLocation { (location, error) in
+            if let error = error {
+                self.alert(title: "Error", message: error.localizedDescription)
+            }
+            else if let location = location {
+                let msg = "User \"\(ParseStudent.fullname)\" has already posted a Student Location. Would you like to Overwrite it?"
+            }
+        }
+    }
+    
+    
+ 
 
 }
