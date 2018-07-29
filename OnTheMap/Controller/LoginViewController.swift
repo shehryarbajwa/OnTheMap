@@ -27,7 +27,6 @@ class LoginViewController: UIViewController {
         
     }
     
-    
     @IBAction func userpressedlogin(_ sender:Any){
         if testtextfield(){
             self.alert(title: "Please login with your udacity credentials", message: "Please proceed with your credentials")
