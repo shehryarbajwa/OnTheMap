@@ -21,13 +21,15 @@
 		12F2058D20F99739000DACA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DED75820BCE48D00FB92A6 /* Main.storyboard */; };
 		E6B4E2A8210A2D1A00CACECC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B4E2A7210A2D1A00CACECC /* TabBarViewController.swift */; };
 		E6B4E2AA210A307200CACECC /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B4E2A9210A307200CACECC /* ViewControllerExtensions.swift */; };
+		E6D4DD1C210E2D4700CBB393 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D4DD1B210E2D4700CBB393 /* MapViewController.swift */; };
+		E6D4DD1E210E2EB500CBB393 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D4DD1D210E2EB500CBB393 /* Notifications.swift */; };
 		E6DED75520BCE48D00FB92A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DED75420BCE48D00FB92A6 /* AppDelegate.swift */; };
 		E6DED75C20BCE48E00FB92A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6DED75B20BCE48E00FB92A6 /* Assets.xcassets */; };
 		E6DED75F20BCE48E00FB92A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6DED75D20BCE48E00FB92A6 /* LaunchScreen.storyboard */; };
 		E6DED76A20BCE48E00FB92A6 /* OnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DED76920BCE48E00FB92A6 /* OnTheMapTests.swift */; };
 		E6DED77520BCE48E00FB92A6 /* OnTheMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DED77420BCE48E00FB92A6 /* OnTheMapUITests.swift */; };
 		E6DED78E20C20B3200FB92A6 /* UdacityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DED78D20C20B3200FB92A6 /* UdacityConstants.swift */; };
-		E6DED79220C2204600FB92A6 /* StudentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DED79120C2204600FB92A6 /* StudentData.swift */; };
+		E6DED79220C2204600FB92A6 /* StudentInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DED79120C2204600FB92A6 /* StudentInformation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		12EAE8BF20EF0FBD000DF6D7 /* UdacityClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityClient.swift; sourceTree = "<group>"; };
 		E6B4E2A7210A2D1A00CACECC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E6B4E2A9210A307200CACECC /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
+		E6D4DD1B210E2D4700CBB393 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E6D4DD1D210E2EB500CBB393 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		E6DED75120BCE48D00FB92A6 /* OnTheMap-Shehryar edit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OnTheMap-Shehryar edit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DED75420BCE48D00FB92A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6DED75920BCE48D00FB92A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,7 +76,7 @@
 		E6DED77620BCE48E00FB92A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6DED78320BD15BB00FB92A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = OnTheMapTests/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		E6DED78D20C20B3200FB92A6 /* UdacityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityConstants.swift; sourceTree = "<group>"; };
-		E6DED79120C2204600FB92A6 /* StudentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentData.swift; sourceTree = "<group>"; };
+		E6DED79120C2204600FB92A6 /* StudentInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 				12CF56F520F844B9008635AF /* LoginViewController.swift */,
 				E6B4E2A7210A2D1A00CACECC /* TabBarViewController.swift */,
 				E6B4E2A9210A307200CACECC /* ViewControllerExtensions.swift */,
+				E6D4DD1D210E2EB500CBB393 /* Notifications.swift */,
+				E6D4DD1B210E2D4700CBB393 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,7 +186,7 @@
 			children = (
 				E6DED75B20BCE48E00FB92A6 /* Assets.xcassets */,
 				E6DED78D20C20B3200FB92A6 /* UdacityConstants.swift */,
-				E6DED79120C2204600FB92A6 /* StudentData.swift */,
+				E6DED79120C2204600FB92A6 /* StudentInformation.swift */,
 				12EAE8BF20EF0FBD000DF6D7 /* UdacityClient.swift */,
 				12C8B26520F08BD000C8E2C2 /* UdacityConvenience.swift */,
 			);
@@ -320,11 +326,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6D4DD1E210E2EB500CBB393 /* Notifications.swift in Sources */,
 				12EAE8C020EF0FBD000DF6D7 /* UdacityClient.swift in Sources */,
 				E6DED78E20C20B3200FB92A6 /* UdacityConstants.swift in Sources */,
 				12325A2F20F43F49001374B5 /* ParseClient.swift in Sources */,
 				E6B4E2AA210A307200CACECC /* ViewControllerExtensions.swift in Sources */,
-				E6DED79220C2204600FB92A6 /* StudentData.swift in Sources */,
+				E6DED79220C2204600FB92A6 /* StudentInformation.swift in Sources */,
 				E6B4E2A8210A2D1A00CACECC /* TabBarViewController.swift in Sources */,
 				1207ED4320FD88E9000DBBBC /* GCDBlackBox.swift in Sources */,
 				12C8B26620F08BD000C8E2C2 /* UdacityConvenience.swift in Sources */,
@@ -333,6 +340,7 @@
 				1283A96D20F6E564009D7A9E /* ParseConvenience.swift in Sources */,
 				12CF56F620F844B9008635AF /* LoginViewController.swift in Sources */,
 				122A316E20F5A8760081F912 /* ParseStudent.swift in Sources */,
+				E6D4DD1C210E2D4700CBB393 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

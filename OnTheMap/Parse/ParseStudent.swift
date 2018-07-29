@@ -31,15 +31,20 @@ struct ParseStudent {
         latitude = dictionary[ParseAPI.JSONResponseKeys.latitude] as? Double
     }
     
-    var fullname: String {
+    var labelName: String {
         var name = ""
-        if !((firstName?.isEmpty)!){
+        if !(firstName?.isEmpty)! {
             name = firstName!
         }
-        if !((lastName?.isEmpty)!){
-            name = lastName!
-        } else {
-            name += "\(lastName)"
+        if !(lastName?.isEmpty)! {
+            if name.isEmpty {
+                name = lastName!
+            } else {
+                name += " \(lastName)"
+            }
+        }
+        if name.isEmpty {
+            name = "No name provided"
         }
         return name
     }

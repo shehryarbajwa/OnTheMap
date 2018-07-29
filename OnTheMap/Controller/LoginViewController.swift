@@ -30,23 +30,18 @@ class LoginViewController: UIViewController {
     
     @IBAction func userpressedlogin(_ sender:Any){
         if testtextfield(){
-            print("Please login with your udacity credentials")
-            //Add an alert view here
+            self.alert(title: "Please login with your udacity credentials", message: "Please proceed with your credentials")
         } else {
-            UdacityClient.sharedInstance().authenticateWithLogin((usernameTextfield.text)!, (passwordTextfield.text)!) { (success, errorString ) in
-                self.performUIUpdatesOnMain{
-                    if success{
-                        self.completelogin()
-                    } else {
-                        print("Your request couldn't be completed")
-                        //replace this with an alert view here
-                    }
-                    
+            UdacityClient.sharedInstance().authenticateWithLogin(usernameTextfield.text!, passwordTextfield.text!) { (success, errorString) in
+                if success{
+                self.performUIUpdatesOnMain {
+                    self.completelogin()
+                }
+                } else {
+                    self.alert(title: "Request not completed", message: errorString!)
+                }
             }
-                
         }
-        }
-        
     }
     
     @IBAction func signup(_ sender: Any){

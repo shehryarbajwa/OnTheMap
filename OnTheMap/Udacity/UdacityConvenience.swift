@@ -14,14 +14,16 @@ extension UdacityClient {
         self.postSessionID(username, password) { (success, registered, sessionID, uniqueKey, errorString)  in
             
             if success {
-                //ParseClient.sharedInstance().sessionID = sessionID
-                //ParseClient.sharedInstance().userID = uniqueKey
+                ParseClient.sharedInstance().sessionID = sessionID
+                ParseClient.sharedInstance().userID = uniqueKey
                 completionHandlerForAuth(success, nil)
             } else {
                 completionHandlerForAuth(false, errorString)
             }
         }
     }
+    
+    
     
     
     func postSessionID( _ username: String, _ password:String, _ completionHandlerforsession: @escaping ( _ success: Bool, _ registered: Bool, _ uniqueKey:String?, _ ID:String?, _ errorString:String?)-> Void ){

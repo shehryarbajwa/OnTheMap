@@ -12,12 +12,12 @@ class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //NotificationCenter.default.addObserver(self, selector: #selector(loadStudentsInformation), name: .reload, object: nil)
-        //loadStudentsInformation()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadstudentinformation), name: .reload, object: nil)
+        loadstudentinformation()
     }
     
     deinit {
-        //NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,7 +41,7 @@ class TabBarViewController: UITabBarController {
         loadstudentinformation()
     }
     
-    private func loadstudentinformation() {
+    @objc private func loadstudentinformation() {
         ParseClient.sharedInstance().getmultiplelocations { (StudentInformation, error) in
             if let error = error {
                 self.alert(title: "Error", message: error.localizedDescription)
@@ -49,21 +49,52 @@ class TabBarViewController: UITabBarController {
         }
             if let StudentInformation = StudentInformation {
                ParseStudent.StudentStorage.studentsInformation = StudentInformation
-               //NotificationCenter.default.post(name: .reloadCompleted, object: nil)
+               NotificationCenter.default.post(name: .reloadCompleted, object: nil)
             }
         }
     }
     
     @IBAction func addLocation(_ sender: Any){
-        ParseClient.sharedInstance().getsingleLocation { (location, error) in
+        enablebuttons(false)
+        ParseClient.sharedInstance().getsingleLocation { (studentInformation, error) in
             if let error = error {
                 self.alert(title: "Error", message: error.localizedDescription)
             }
-            else if let location = location {
-                let msg = "User \"\(ParseStudent.fullname)\" has already posted a Student Location. Would you like to Overwrite it?"
+            else if let studentInformation = studentInformation {
+                
+                let msg = "User \"\(studentInformation.firstName)\" has already posted a Student Location. Would you like to Overwrite it?"
+                self.overrideconfirmation(title: "Override", message: msg, action: {
+                    //self.showpostingView()
+                })
+            } else {
+                //performUIUpdatesOnMain {
+                    //self.showpostingView()
+                }
+                
+                self.enablebuttons(true)
             }
         }
+    
+    
+    private func enablebuttons(_ enable:Bool){
+        performUIUpdatesOnMain {
+            self.logout?.isEnabled = enable
+            self.addpin?.isEnabled = enable
+            self.refresh?.isEnabled = enable
+        }
     }
+    
+    private func showpostingView(studentObjectID:String){
+        //let postingView = storyboard?.instantiateViewController(withIdentifier: "postingView") as! PostingView
+        //postingView.locationID = studentObjectID
+       // navigationController?.pushViewController(postingView, animated: true)
+    }
+    
+    
+    
+    
+    
+    
     
     
  

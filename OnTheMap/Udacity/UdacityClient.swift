@@ -41,7 +41,7 @@ class UdacityClient {
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status code other than 2xx!")
+                print("Your request returned a status code other than 2xxx!")
                 return
             }
             
@@ -84,7 +84,7 @@ class UdacityClient {
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status code other than 2xx!")
+                print("Your request returned a status code other than 2xx1!")
                 return
             }
             
@@ -127,7 +127,7 @@ class UdacityClient {
             }
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
-                print("Your request returned a status other than 2xx")
+                print("Your request returned a status other than 2xxa")
                 return
             }
             
