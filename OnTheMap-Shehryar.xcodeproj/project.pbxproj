@@ -62,16 +62,16 @@
 		E6B4E2A9210A307200CACECC /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		E6D4DD1B210E2D4700CBB393 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E6D4DD1D210E2EB500CBB393 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		E6DED75120BCE48D00FB92A6 /* OnTheMap-Shehryar edit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OnTheMap-Shehryar edit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6DED75120BCE48D00FB92A6 /* OnTheMap-Shehryar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OnTheMap-Shehryar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DED75420BCE48D00FB92A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6DED75920BCE48D00FB92A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E6DED75B20BCE48E00FB92A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6DED75E20BCE48E00FB92A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6DED76020BCE48E00FB92A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6DED76520BCE48E00FB92A6 /* OnTheMap-Shehryar editTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OnTheMap-Shehryar editTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6DED76520BCE48E00FB92A6 /* OnTheMap-ShehryarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OnTheMap-ShehryarTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DED76920BCE48E00FB92A6 /* OnTheMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapTests.swift; sourceTree = "<group>"; };
 		E6DED76B20BCE48E00FB92A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6DED77020BCE48E00FB92A6 /* OnTheMap-Shehryar editUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OnTheMap-Shehryar editUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6DED77020BCE48E00FB92A6 /* OnTheMap-ShehryarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OnTheMap-ShehryarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6DED77420BCE48E00FB92A6 /* OnTheMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapUITests.swift; sourceTree = "<group>"; };
 		E6DED77620BCE48E00FB92A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6DED78320BD15BB00FB92A6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = OnTheMapTests/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -143,9 +143,9 @@
 		E6DED75220BCE48D00FB92A6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E6DED75120BCE48D00FB92A6 /* OnTheMap-Shehryar edit.app */,
-				E6DED76520BCE48E00FB92A6 /* OnTheMap-Shehryar editTests.xctest */,
-				E6DED77020BCE48E00FB92A6 /* OnTheMap-Shehryar editUITests.xctest */,
+				E6DED75120BCE48D00FB92A6 /* OnTheMap-Shehryar.app */,
+				E6DED76520BCE48E00FB92A6 /* OnTheMap-ShehryarTests.xctest */,
+				E6DED77020BCE48E00FB92A6 /* OnTheMap-ShehryarUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,9 +196,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E6DED75020BCE48D00FB92A6 /* OnTheMap-Shehryar edit */ = {
+		E6DED75020BCE48D00FB92A6 /* OnTheMap-Shehryar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6DED77920BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-Shehryar edit" */;
+			buildConfigurationList = E6DED77920BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-Shehryar" */;
 			buildPhases = (
 				E6DED74D20BCE48D00FB92A6 /* Sources */,
 				E6DED74E20BCE48D00FB92A6 /* Frameworks */,
@@ -208,14 +208,14 @@
 			);
 			dependencies = (
 			);
-			name = "OnTheMap-Shehryar edit";
+			name = "OnTheMap-Shehryar";
 			productName = OnTheMap;
-			productReference = E6DED75120BCE48D00FB92A6 /* OnTheMap-Shehryar edit.app */;
+			productReference = E6DED75120BCE48D00FB92A6 /* OnTheMap-Shehryar.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E6DED76420BCE48E00FB92A6 /* OnTheMap-Shehryar editTests */ = {
+		E6DED76420BCE48E00FB92A6 /* OnTheMap-ShehryarTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6DED77C20BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-Shehryar editTests" */;
+			buildConfigurationList = E6DED77C20BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-ShehryarTests" */;
 			buildPhases = (
 				E6DED76120BCE48E00FB92A6 /* Sources */,
 				E6DED76220BCE48E00FB92A6 /* Frameworks */,
@@ -226,14 +226,14 @@
 			dependencies = (
 				E6DED76720BCE48E00FB92A6 /* PBXTargetDependency */,
 			);
-			name = "OnTheMap-Shehryar editTests";
+			name = "OnTheMap-ShehryarTests";
 			productName = OnTheMapTests;
-			productReference = E6DED76520BCE48E00FB92A6 /* OnTheMap-Shehryar editTests.xctest */;
+			productReference = E6DED76520BCE48E00FB92A6 /* OnTheMap-ShehryarTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		E6DED76F20BCE48E00FB92A6 /* OnTheMap-Shehryar editUITests */ = {
+		E6DED76F20BCE48E00FB92A6 /* OnTheMap-ShehryarUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E6DED77F20BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-Shehryar editUITests" */;
+			buildConfigurationList = E6DED77F20BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-ShehryarUITests" */;
 			buildPhases = (
 				E6DED76C20BCE48E00FB92A6 /* Sources */,
 				E6DED76D20BCE48E00FB92A6 /* Frameworks */,
@@ -244,9 +244,9 @@
 			dependencies = (
 				E6DED77220BCE48E00FB92A6 /* PBXTargetDependency */,
 			);
-			name = "OnTheMap-Shehryar editUITests";
+			name = "OnTheMap-ShehryarUITests";
 			productName = OnTheMapUITests;
-			productReference = E6DED77020BCE48E00FB92A6 /* OnTheMap-Shehryar editUITests.xctest */;
+			productReference = E6DED77020BCE48E00FB92A6 /* OnTheMap-ShehryarUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -272,7 +272,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E6DED74C20BCE48D00FB92A6 /* Build configuration list for PBXProject "OnTheMap-Shehryar edit" */;
+			buildConfigurationList = E6DED74C20BCE48D00FB92A6 /* Build configuration list for PBXProject "OnTheMap-Shehryar" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -285,9 +285,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E6DED75020BCE48D00FB92A6 /* OnTheMap-Shehryar edit */,
-				E6DED76420BCE48E00FB92A6 /* OnTheMap-Shehryar editTests */,
-				E6DED76F20BCE48E00FB92A6 /* OnTheMap-Shehryar editUITests */,
+				E6DED75020BCE48D00FB92A6 /* OnTheMap-Shehryar */,
+				E6DED76420BCE48E00FB92A6 /* OnTheMap-ShehryarTests */,
+				E6DED76F20BCE48E00FB92A6 /* OnTheMap-ShehryarUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -366,12 +366,12 @@
 /* Begin PBXTargetDependency section */
 		E6DED76720BCE48E00FB92A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E6DED75020BCE48D00FB92A6 /* OnTheMap-Shehryar edit */;
+			target = E6DED75020BCE48D00FB92A6 /* OnTheMap-Shehryar */;
 			targetProxy = E6DED76620BCE48E00FB92A6 /* PBXContainerItemProxy */;
 		};
 		E6DED77220BCE48E00FB92A6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = E6DED75020BCE48D00FB92A6 /* OnTheMap-Shehryar edit */;
+			target = E6DED75020BCE48D00FB92A6 /* OnTheMap-Shehryar */;
 			targetProxy = E6DED77120BCE48E00FB92A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -560,7 +560,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnTheMap-Shehryar edit.app/OnTheMap-Shehryar edit";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnTheMap-Shehryar.app/OnTheMap-Shehryar";
 			};
 			name = Debug;
 		};
@@ -580,7 +580,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnTheMap-Shehryar edit.app/OnTheMap-Shehryar edit";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnTheMap-Shehryar.app/OnTheMap-Shehryar";
 			};
 			name = Release;
 		};
@@ -625,7 +625,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E6DED74C20BCE48D00FB92A6 /* Build configuration list for PBXProject "OnTheMap-Shehryar edit" */ = {
+		E6DED74C20BCE48D00FB92A6 /* Build configuration list for PBXProject "OnTheMap-Shehryar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6DED77720BCE48E00FB92A6 /* Debug */,
@@ -634,7 +634,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6DED77920BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-Shehryar edit" */ = {
+		E6DED77920BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-Shehryar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6DED77A20BCE48E00FB92A6 /* Debug */,
@@ -643,7 +643,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6DED77C20BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-Shehryar editTests" */ = {
+		E6DED77C20BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-ShehryarTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6DED77D20BCE48E00FB92A6 /* Debug */,
@@ -652,7 +652,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E6DED77F20BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-Shehryar editUITests" */ = {
+		E6DED77F20BCE48E00FB92A6 /* Build configuration list for PBXNativeTarget "OnTheMap-ShehryarUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E6DED78020BCE48E00FB92A6 /* Debug */,
