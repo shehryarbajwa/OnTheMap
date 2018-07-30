@@ -29,9 +29,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func userpressedlogin(_ sender:Any){
         if testtextfield(){
-            self.alert(title: "Please login with your udacity credentials", message: "Please proceed with your credentials")
-        } else {
-            UdacityClient.sharedInstance().authenticateWithLogin(usernameTextfield.text!, passwordTextfield.text!) { (success, errorString) in
+            self.alert(title: "Please login with your udacity credentials", message: "")
+        }
+             let email = usernameTextfield.text!
+             let password = passwordTextfield.text!
+        
+            UdacityClient.sharedInstance().authenticateWithLogin(username: email, password: password) { (success, errorString) in
                 if success{
                 self.performUIUpdatesOnMain {
                     self.completelogin()
@@ -41,7 +44,6 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-    }
     
     @IBAction func signup(_ sender: Any){
         let urlString = "https://www.udacity.com/account/auth#!/signup"

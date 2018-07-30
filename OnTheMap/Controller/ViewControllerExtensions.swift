@@ -19,7 +19,7 @@ extension UIViewController {
         
         performUIUpdatesOnMain {
         let alertcontroller = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertcontroller.addAction(UIAlertAction(title: title, style: .cancel, handler: { (completionhandler) in
+        alertcontroller.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { (completionhandler) in
             action?()
         }))
         self.present(alertcontroller, animated: true)

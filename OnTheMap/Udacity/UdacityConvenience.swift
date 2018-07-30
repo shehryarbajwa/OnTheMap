@@ -10,7 +10,7 @@ import Foundation
 
 extension UdacityClient {
     
-    func authenticateWithLogin(_ username: String, _ password: String, _ completionHandlerForAuth: @escaping (_ success: Bool, _ errorString: String?)-> Void) {
+    func authenticateWithLogin(username: String, password: String, _ completionHandlerForAuth: @escaping (_ success: Bool, _ errorString: String?)-> Void) {
         self.postSessionID(username, password) { (success, registered, sessionID, uniqueKey, errorString)  in
             
             if success {

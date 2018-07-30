@@ -64,9 +64,8 @@ class UdacityClient {
     
     func taskForPostMethod(_ method: String, _ parameters: [String:AnyObject], jsonBody: String, completionHandlerforPost: @escaping(_ result: AnyObject?, _ error: NSError?)->Void) -> URLSessionDataTask {
         
-        var parameterswithApikey = parameters
         
-        var request = URLRequest(url: URLFromParameters(parameterswithApikey, withPathExtension: method))
+        var request = URLRequest(url: URLFromParameters(parameters, withPathExtension: method))
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -85,7 +84,7 @@ class UdacityClient {
             
             guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
                 print("Your request returned a status code other than 2xx1! Is the problem here?")
-                return
+                return 
             }
             
             guard let data = data else {
