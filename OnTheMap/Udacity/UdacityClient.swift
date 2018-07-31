@@ -8,8 +8,11 @@
 
 import Foundation
 
-
 class UdacityClient {
+    
+    var session = URLSession.shared
+    var AccountKey : String?
+    var SessionID : String?
     
     func URLFromParameters (_ parameters: [String:AnyObject], withPathExtension: String? = nil) -> URL{
         
@@ -62,22 +65,19 @@ class UdacityClient {
         
     }
     
-    func taskForPostMethod(_ method: String, _ parameters: [String:AnyObject], jsonBody: String, completionHandlerforPost: @escaping(_ result: AnyObject?, _ error: NSError?)->Void) -> URLSessionDataTask {
+    func taskforPostMethod(request: URLRequest,
+                           completionHandlerforPost: @escaping (_ result: AnyObject?, _ error: NSError?) -> Void)
+        -> URLSessionDataTask {
         
         
-        var request = URLRequest(url: URLFromParameters(parameters, withPathExtension: method))
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = jsonBody.data(using: String.Encoding.utf8)
-        
-        let task = URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error) in
+        let task = session.dataTask(with: request as URLRequest) { data, response, error in
+            
             func senderror(_ error: String) {
                 let userInfo = [NSLocalizedDescriptionKey : error]
                 completionHandlerforPost(nil, NSError(domain: "taskForPOSTTMethod", code: 1, userInfo: userInfo))
             }
             
-            guard(error == nil) else{
+            guard(error == nil) else {
                 senderror("The internet connection seems to be offline")
                 return
             }
@@ -95,14 +95,14 @@ class UdacityClient {
             let range = Range(5..<data.count)
             
             let newData = data.subdata(in: range)
+            print(String(data: newData, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!)
             
             self.convertDataWithCompletionHandler(newData, completionHandlerForConvertData: completionHandlerforPost)
             
         }
         task.resume()
+        
         return task
-        
-        
     }
     
     func taskforDeleteSession(_ method: String, parameters: [String:AnyObject] , completionHandlerforDelete :@escaping (_ result: AnyObject? , _ error: NSError?) -> Void) -> URLSessionDataTask {

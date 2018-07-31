@@ -31,16 +31,13 @@ class LoginViewController: UIViewController {
         if testtextfield(){
             self.alert(title: "Please login with your udacity credentials", message: "")
         }
-             let email = usernameTextfield.text!
-             let password = passwordTextfield.text!
         
-            UdacityClient.sharedInstance().authenticateWithLogin(username: email, password: password) { (success, errorString) in
-                if success{
-                self.performUIUpdatesOnMain {
-                    self.completelogin()
+        UdacityClient.sharedInstance().authenticateWithLogin(email:usernameTextfield.text!, password: passwordTextfield.text!) { (error) in
+                if let error = error {
+                    self.alert(title: "Invalid Login credentials", message: "Try again")
                 }
-                } else {
-                    self.alert(title: "Request not completed", message: errorString!)
+                else {
+                    self.completelogin()
                 }
             }
         }
@@ -55,8 +52,9 @@ class LoginViewController: UIViewController {
     
     
     private func completelogin(){
+        self.activityIndicator.startAnimating()
         let controller = storyboard?.instantiateViewController(withIdentifier: "NavigationMainViewController") as! UINavigationController
-        present(controller, animated: true, completion: nil)
+        self.present(controller, animated: true, completion: nil)
     }
     
     private func testtextfield() -> Bool {

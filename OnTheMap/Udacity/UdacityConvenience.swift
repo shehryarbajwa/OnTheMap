@@ -10,45 +10,68 @@ import Foundation
 
 extension UdacityClient {
     
-    func authenticateWithLogin(username: String, password: String, _ completionHandlerForAuth: @escaping (_ success: Bool, _ errorString: String?)-> Void) {
-        self.postSessionID(username, password) { (success, registered, sessionID, uniqueKey, errorString)  in
+    func authenticateWithLogin(email: String, password: String,
+                               completionHandlerLogin: @escaping (_ error: NSError?)
+        -> Void) {
+        
+        var request = URLRequest(url: URL(string: "https://www.udacity.com/api/session")!)
+        
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.httpBody = "{\"udacity\": {\"username\": \"\(email)\", \"password\": \"\(password)\"}}".data(using: String.Encoding.utf8)
+        
+        
+        let task = taskforPostMethod(request: request) { (parsedResult, error)  in
             
-            if success {
-                ParseClient.sharedInstance().sessionID = sessionID
-                ParseClient.sharedInstance().userID = uniqueKey
-                completionHandlerForAuth(success, nil)
-            } else {
-                completionHandlerForAuth(false, errorString)
-            }
-        }
-    }
-    
-    
-    
-    
-    func postSessionID( _ username: String, _ password:String, _ completionHandlerforsession: @escaping ( _ success: Bool, _ registered: Bool, _ uniqueKey:String?, _ ID:String?, _ errorString:String?)-> Void ){
-        
-        let parameters = [String:AnyObject]()
-        
-        let jSONbody = "{\"udacity\": {\"\(UdacityAPI.UdacityJSONParameters.username)\": \"\(username)\", \"\(UdacityAPI.UdacityJSONParameters.password)\": \"\(password)\"}}"
-        
-        let methodtoexecute = taskForPostMethod(UdacityAPI.Methods.session, parameters as [String:AnyObject], jsonBody: jSONbody) { (results, error) in
             if let error = error {
-                completionHandlerforsession(false, false, nil, nil, error.localizedDescription)
-            }
-            if let session = results?[UdacityAPI.JSONResponseKeys.Session] as? [String:AnyObject], let account = results?[UdacityAPI.JSONResponseKeys.Account] as? [String:AnyObject]{
-                let sessionID = session[UdacityAPI.UdacityJSONParameters.sessionID] as? String
-                let uniqueKey = account[UdacityAPI.JSONResponseKeys.Key] as? String
-                let registered = account[UdacityAPI.JSONResponseKeys.Registered] as? Bool
+                completionHandlerLogin(error)
+            } else{
                 
-                completionHandlerforsession(true, true, uniqueKey, sessionID, nil)
-            } else {
-                print("Couldn't find session ID. Login failed")
-                completionHandlerforsession(false, false, nil, nil, "Login failed")
+                guard let accountDictionary = parsedResult?[UdacityAPI.JSONResponseKeys.Account] as? [String:AnyObject] else {
+                    return
+                }
+                
+                
+                guard let registered = accountDictionary[UdacityAPI.JSONResponseKeys.Registered] as? Bool else {
+                    return
+                }
+                
+                
+                guard let accountKey = accountDictionary[UdacityAPI.JSONResponseKeys.Key] as? String else {
+                    return
+                }
+                
+                
+                guard let sessionDictionary = parsedResult?[UdacityAPI.JSONResponseKeys.Session] as? [String:AnyObject] else {
+                    return
+                }
+                
+                
+                guard let sessionID = sessionDictionary[UdacityAPI.JSONResponseKeys.Session] as? String else {
+                    return
+                }
+                
+                
+                if registered {
+                    self.AccountKey = accountKey
+                    self.SessionID = sessionID
+                    
+                    completionHandlerLogin(nil)
+                    
+                }
+                else {
+                    
+                    let errorMsg = "No account found with these initials"
+                    let userInfo = [NSLocalizedDescriptionKey : errorMsg]
+                    completionHandlerLogin(NSError(domain: errorMsg, code: 2, userInfo: userInfo))
             }
         }
-        
     }
+}
+    
+    
     
     func deleteSessionID(_ completionHandlerFordelete: @escaping (_ success: Bool, _ sessionID: String?, _ errorString: String?)->Void){
         
@@ -99,5 +122,6 @@ extension UdacityClient {
             }
         }
     }
-    }
+}
+
 }
