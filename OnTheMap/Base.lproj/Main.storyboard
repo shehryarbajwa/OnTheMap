@@ -14,7 +14,7 @@
         <!--Login View Controller-->
         <scene sceneID="uM7-B7-n0D">
             <objects>
-                <viewController id="ouL-P5-uJD" customClass="LoginViewController" customModule="OnTheMap_Shehryar_edit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ouL-P5-uJD" customClass="LoginViewController" customModule="OnTheMap_Shehryar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aXT-jX-lOR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,28 +93,12 @@
                         <outlet property="signInButton" destination="Y3W-1s-Goi" id="0wn-mD-rrz"/>
                         <outlet property="signup" destination="hDg-Um-LNR" id="lv8-ca-Ujf"/>
                         <outlet property="usernameTextfield" destination="7vY-fL-fSa" id="0Vc-Wl-fHn"/>
-                        <segue destination="dqV-nQ-0wn" kind="show" identifier="mapview" id="AeL-GW-h50"/>
+                        <segue destination="EMn-n3-aEK" kind="show" identifier="logintotabbar" id="qbH-QW-bcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8e-oW-l7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="115"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pPZ-OT-iCz">
-            <objects>
-                <navigationController id="dqV-nQ-0wn" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f5w-in-HcE">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="EMn-n3-aEK" kind="relationship" relationship="rootViewController" id="nPh-oX-idM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l56-Fq-XrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2577" y="115"/>
+            <point key="canvasLocation" x="2401" y="115"/>
         </scene>
         <!--List-->
         <scene sceneID="sU9-SE-Phx">
@@ -135,7 +119,7 @@
         <!--Map-->
         <scene sceneID="Vcn-sM-grN">
             <objects>
-                <viewController id="RtZ-dJ-VhJ" customClass="MapViewController" customModule="OnTheMap_Shehryar_edit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RtZ-dJ-VhJ" customClass="MapViewController" customModule="OnTheMap_Shehryar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hPb-Ao-8L1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,7 +149,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="Cdf-8U-zOU">
             <objects>
-                <tabBarController id="EMn-n3-aEK" customClass="TabBarViewController" customModule="OnTheMap_Shehryar_edit" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="EMn-n3-aEK" customClass="TabBarViewController" customModule="OnTheMap_Shehryar" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="hEt-gO-tk4">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="TXB-jp-tzA"/>
                         <rightBarButtonItems>

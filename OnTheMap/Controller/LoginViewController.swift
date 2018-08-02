@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
             UdacityClient.sharedInstance().authenticateWithLogin(usernameTextfield.text!, passwordTextfield.text!) { (success, errorString) in
                 if success{
                 self.performUIUpdatesOnMain {
-                    self.completelogin()
+                    self.performSegue(withIdentifier: "logintotabbar", sender: self)
                 }
                 } else {
                     self.alert(title: "Request not completed", message: errorString!)
@@ -53,8 +53,7 @@ class LoginViewController: UIViewController {
     
     
     private func completelogin(){
-        let controller = storyboard?.instantiateViewController(withIdentifier: "NavigationMainViewController") as! UINavigationController
-        present(controller, animated: true, completion: nil)
+        self.performSegue(withIdentifier: "logintotabbar", sender: self)
     }
     
     private func testtextfield() -> Bool {
