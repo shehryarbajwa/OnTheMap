@@ -93,28 +93,12 @@
                         <outlet property="signInButton" destination="Y3W-1s-Goi" id="0wn-mD-rrz"/>
                         <outlet property="signup" destination="hDg-Um-LNR" id="lv8-ca-Ujf"/>
                         <outlet property="usernameTextfield" destination="7vY-fL-fSa" id="0Vc-Wl-fHn"/>
-                        <segue destination="dqV-nQ-0wn" kind="show" identifier="mapview" id="AeL-GW-h50"/>
+                        <segue destination="EMn-n3-aEK" kind="show" identifier="logintotabbar" id="qbH-QW-bcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X8e-oW-l7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1758" y="115"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="pPZ-OT-iCz">
-            <objects>
-                <navigationController id="dqV-nQ-0wn" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f5w-in-HcE">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="EMn-n3-aEK" kind="relationship" relationship="rootViewController" id="nPh-oX-idM"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l56-Fq-XrU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2577" y="115"/>
+            <point key="canvasLocation" x="2401" y="115"/>
         </scene>
         <!--List-->
         <scene sceneID="sU9-SE-Phx">

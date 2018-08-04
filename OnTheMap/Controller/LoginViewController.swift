@@ -29,12 +29,21 @@ class LoginViewController: UIViewController {
     
     @IBAction func userpressedlogin(_ sender:Any){
         if testtextfield(){
+<<<<<<< HEAD
             self.alert(title: "Please login with your udacity credentials", message: "")
         }
         
         UdacityClient.sharedInstance().authenticateWithLogin(email:usernameTextfield.text!, password: passwordTextfield.text!) { (error) in
                 if let error = error {
                     self.alert(title: "Invalid Login credentials", message: "Try again")
+=======
+            self.alert(title: "Please login with your udacity credentials", message: "Please proceed with your credentials")
+        } else {
+            UdacityClient.sharedInstance().authenticateWithLogin(usernameTextfield.text!, passwordTextfield.text!) { (success, errorString) in
+                if success{
+                self.performUIUpdatesOnMain {
+                    self.performSegue(withIdentifier: "logintotabbar", sender: self)
+>>>>>>> d08f80a6d929bd36bc6960d4bc357f0e39302b42
                 }
                 else {
                     self.completelogin()
@@ -52,9 +61,13 @@ class LoginViewController: UIViewController {
     
     
     private func completelogin(){
+<<<<<<< HEAD
         self.activityIndicator.startAnimating()
         let controller = storyboard?.instantiateViewController(withIdentifier: "NavigationMainViewController") as! UINavigationController
         self.present(controller, animated: true, completion: nil)
+=======
+        self.performSegue(withIdentifier: "logintotabbar", sender: self)
+>>>>>>> d08f80a6d929bd36bc6960d4bc357f0e39302b42
     }
     
     private func testtextfield() -> Bool {

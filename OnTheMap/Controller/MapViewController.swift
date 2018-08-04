@@ -32,9 +32,6 @@ class MapViewController: UIViewController {
         }
     }
     
-    
-    
-    
     private func showstudentsonthemap(_ studentInformation: [ParseStudent]){
         mapkit.removeAnnotations(mapkit.annotations)
         for info in studentInformation where info.latitude != 0 && info.longitude != 0 {
